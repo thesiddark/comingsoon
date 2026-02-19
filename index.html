@@ -1,22 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Washico website is under development. Contact us for any inquiries." />
+  <title>Washico | Coming Soon</title>
+
   <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      padding: 120px;
-      background: #0f172a;
-      color: white;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    h1 { font-size: 40px; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 420px;
+      width: 100%;
+      animation: fadeIn 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #38bdf8;
+      margin-bottom: 10px;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 16px;
+      opacity: 0.8;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .email {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 15px;
+      color: #38bdf8;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .email:hover {
+      color: #0ea5e9;
+      transform: scale(1.05);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 36px; }
+      .brand { font-size: 24px; }
+      p { font-size: 18px; }
+    }
   </style>
 </head>
+
 <body>
-  <h1>🚀 Website Coming Soon</h1>
-  <p>We are building something awesome.</p>
+  <div class="container">
+    <div class="brand">WASHICO.IN</div>
+
+    <h1>🚀 Website Coming Soon</h1>
+
+    <p>
+      We're currently building something great.  
+      Stay tuned for updates.
+    </p>
+
+    <p>
+      For any inquiries:
+      <br />
+      <a href="mailto:info@devsmoon.in" class="email">
+        info@devsmoon.in
+      </a>
+    </p>
+  </div>
 </body>
 </html>
 
