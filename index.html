@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Washico website is under development. Contact us for any inquiries." />
-  <title>Washico | Coming Soon</title>
+  <meta name="description" content="Washico.in is a premium domain name available for sale. Contact us to make an offer." />
+  <title>Washico.in | Domain For Sale</title>
+
+  <!-- Lottie Player Script -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
   <style>
     * {
@@ -14,97 +17,222 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      color: #1e293b;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       text-align: center;
       padding: 20px;
+      position: relative;
+      overflow: hidden; /* Keeps the animation from creating scrollbars */
+    }
+
+    /* Background Animation Container */
+    .lottie-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none; /* Allows clicks to pass through to the button */
+      opacity: 0.35; /* Keeps the animation subtle */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lottie-bg lottie-player {
+      width: 100%;
+      height: 100%;
+      max-width: 1200px; /* Prevents it from getting too massive on huge screens */
     }
 
     .container {
-      max-width: 420px;
+      /* Glassmorphism effect so the animation shows through slightly blurred */
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      
+      border-radius: 24px;
+      padding: 50px 40px 30px 40px;
+      max-width: 500px;
       width: 100%;
-      animation: fadeIn 1.5s ease forwards;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05);
+      animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       opacity: 0;
+      transform: translateY(30px);
+      position: relative;
+      z-index: 10; /* Keeps the card above the animation */
+      overflow: hidden;
     }
 
-    .brand {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: #38bdf8;
-      margin-bottom: 10px;
-      animation: fadeIn 1.5s ease forwards;
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(to right, #2563eb, #6366f1);
     }
 
-    h1 {
-      font-size: 28px;
+    .badge-container {
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #dcfce7;
+      color: #166534;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid #bbf7d0;
+      animation: pulse 2s infinite;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #22c55e;
+      border-radius: 50%;
+    }
+
+    .domain-name {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #0f172a;
       margin-bottom: 15px;
-      animation: float 3s ease-in-out infinite;
     }
 
     p {
-      font-size: 16px;
-      opacity: 0.8;
-      margin-bottom: 20px;
+      font-size: 17px;
+      color: #64748b;
+      margin-bottom: 35px;
       line-height: 1.6;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #2563eb, #6366f1);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(37, 99, 235, 0.25);
+      background: linear-gradient(135deg, #3b82f6, #818cf8);
+    }
+
+    .contact-info {
+      margin-top: 35px;
+      font-size: 15px;
+      color: #94a3b8;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 25px;
     }
 
     .email {
       display: inline-block;
-      margin-top: 10px;
-      font-size: 15px;
-      color: #38bdf8;
+      margin-top: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #334155;
       text-decoration: none;
-      transition: 0.3s ease;
+      transition: color 0.3s ease;
     }
 
     .email:hover {
-      color: #0ea5e9;
-      transform: scale(1.05);
+      color: #2563eb;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+    .policy-disclaimer {
+      margin-top: 30px;
+      font-size: 11px;
+      color: #cbd5e1;
+      line-height: 1.4;
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    @keyframes slideUp {
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
     }
 
     @media (min-width: 768px) {
-      h1 { font-size: 36px; }
-      .brand { font-size: 24px; }
+      .domain-name { font-size: 46px; }
       p { font-size: 18px; }
     }
   </style>
 </head>
 
 <body>
+  <!-- Lottie Background -->
+  <!-- Note: '%20' is used to handle the spaces in your file name safely on the web -->
+  <div class="lottie-bg">
+    <lottie-player 
+      src="Girl%20Cycling%20in%20autumn.json" 
+      background="transparent" 
+      speed="1" 
+      loop 
+      autoplay>
+    </lottie-player>
+  </div>
+
   <div class="container">
-    <div class="brand">WASHICO.IN</div>
+    <div class="badge-container">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        FOR SALE
+      </div>
+    </div>
 
-    <h1>🚀 Website Coming Soon</h1>
+    <h1 class="domain-name">WASHICO.IN</h1>
 
     <p>
-      We're currently building something great.  
-      Stay tuned for updates.
+      This highly brandable and memorable domain is currently available for purchase. Secure it today to elevate your business.
     </p>
 
-    <p>
-      For further information, kindly email us at
+    <a href="mailto:devsmoon.in@gmail.com?subject=Offer for Washico.in Domain" class="cta-button">
+      Make an Offer
+    </a>
+
+    <div class="contact-info">
+      Or email us directly at
       <br />
-      <a href="mailto:info@devsmoon.in" class="email">
-        info@devsmoon.in
+      <a href="mailto:devsmoon.in@gmail.com" class="email">
+        devsmoon.in@gmail.com
       </a>
-    </p>
+    </div>
+
+    <div class="policy-disclaimer">
+      *Disclaimer: We do not hold any trademark, copyright, or brand affiliation associated with this name. This domain is being sold independently.
+    </div>
   </div>
 </body>
 </html>
-
-
