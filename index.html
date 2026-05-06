@@ -12,6 +12,9 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Devsmoon" />
   <link rel="canonical" href="https://washico.in/" />
+  
+  <!-- Bicycle Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -25,33 +28,34 @@
   <meta property="twitter:title" content="Washico.in - Premium Domain Name For Sale" />
   <meta property="twitter:description" content="The premium domain Washico.in is available for purchase. Secure this memorable brand name for your business today." />
 
-  <!-- JSON-LD Structured Data for Google Rich Results -->
+  <!-- CORRECTED JSON-LD Structured Data to clear Search Console Errors -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org/",
-    "@type": "WebPage",
-    "name": "Washico.in - Domain For Sale",
-    "url": "https://washico.in/",
-    "description": "Premium domain name Washico.in is available for purchase.",
-    "mainEntity": {
-      "@type": "Product",
-      "name": "Washico.in Domain Name",
-      "description": "The highly brandable domain name Washico.in.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Washico"
-      },
-      "offers": {
-        "@type": "Offer",
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://washico.in/#website",
         "url": "https://washico.in/",
-        "availability": "https://schema.org/InStock",
-        "seller": {
+        "name": "Washico",
+        "description": "Premium domain name Washico.in is available for purchase.",
+        "publisher": {
           "@type": "Organization",
           "name": "Devsmoon",
           "email": "devsmoon.in@gmail.com"
         }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://washico.in/#webpage",
+        "url": "https://washico.in/",
+        "name": "Washico.in - Domain For Sale",
+        "isPartOf": {
+          "@id": "https://washico.in/#website"
+        },
+        "description": "The highly brandable domain name Washico.in is currently available for purchase. Make an offer to secure this brand today."
       }
-    }
+    ]
   }
   </script>
 
